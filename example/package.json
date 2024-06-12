@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator='iPhone 13'",
     "start": "react-native start",
     "android": "react-native run-android",
     "build:android": "cd android && ./gradlew assembleDebug --no-daemon --console=plain -PreactNativeArchitectures=arm64-v8a",

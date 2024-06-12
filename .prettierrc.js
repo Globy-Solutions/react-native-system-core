@@ -3,5 +3,9 @@ module.exports = {
   bracketSameLine: true,
   bracketSpacing: false,
   singleQuote: true,
-  trailingComma: 'none'
+  parser: 'typescript',
+  trailingComma: 'none',
+  quoteProps: 'consistent',
+  tabWidth: 2,
+  useTabs: false,
 };
