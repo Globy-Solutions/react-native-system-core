@@ -1,0 +1,1 @@
+npx release-it --npm.tag=next --ci --npm.otp=123345

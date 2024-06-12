@@ -32,6 +32,7 @@
     "typecheck": "tsc --pretty --noEmit",
     "lint": "npx eslint --fix eslint.config.mjs",
     "format": "npx prettier --write --config ./.prettierrc.js \"**/*.{ts,tsx}\"",
+    "prepare": "yarn lint && yarn typecheck && yarn format",
     "add_pods": "chmod +x ./scripts/add_pods.sh && ./scripts/add_pods.sh",
     "add_deps": "chmod +x ./scripts/add_deps.sh && ./scripts/add_deps.sh",
     "example": "yarn workspace @globy-solutions/react-native-system-core-example",
@@ -95,13 +96,6 @@
     "example"
   ],
   "packageManager": "yarn@3.6.1",
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -117,7 +111,13 @@
       "publish": true
     },
     "github": {
-      "release": true
+      "release": true,
+      "releaseNotes": "git log --no-merges --pretty=format:\"* %s %h\" ${latestTag}...main",
+      "comments": {
+        "submit": false,
+        "issue": ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
+        "pr": ":rocket: _This pull request is included in v${version}. See [${releaseName}](${releaseUrl}) for release notes._"
+      }
     },
     "plugins": {
       "@release-it/conventional-changelog": {
