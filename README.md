@@ -11,11 +11,11 @@ npm install @globy-solutions/react-native-system-core
 ## Usage
 
 ```js
-import { multiply } from '@globy-solutions/react-native-system-core';
+import { ThemeProvider } from '@globy-solutions/react-native-system-core';
 
 // ...
 
-const result = await multiply(3, 7);
+const { colors: {background} } = useThemeProvider();
 ```
 
 ## Contributing
