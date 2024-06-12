@@ -1,5 +1,5 @@
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 import React, {useCallback, useEffect, useState} from 'react';
 import {useSetRecoilState} from 'recoil';
 import hookRoute from '../state-management/recoil/router';
@@ -86,4 +86,4 @@ function Container({
   );
 }
 
-export {Container, createNativeStackNavigator};
+export default Container;

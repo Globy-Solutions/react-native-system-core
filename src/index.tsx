@@ -23,8 +23,7 @@ export function multiply(a: number, b: number): Promise<number> {
 }
  */
 
-export {Navigator, Screen} from './navigator/CommonNavigator';
-export {Container, createNativeStackNavigator} from './navigator/Container';
+export {Navigator, default as RootNavigator, Screen} from './navigator';
 export {default as useNavigation} from './navigator/hooks/useNavigation';
 export {StateProvider} from './state-management';
 export {darkTheme, defaults, lightTheme} from './styles/theme';

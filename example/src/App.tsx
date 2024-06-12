@@ -1,25 +1,36 @@
 import * as React from 'react';
 
+import {
+  Navigator,
+  RootNavigator,
+  Screen,
+  ThemeProvider
+} from '@globy-solutions/react-native-system-core';
 import {StyleSheet, Text, View} from 'react-native';
-// import { multiply } from '@globy-solutions/react-native-system-core';
+
+import About from './screens/about';
+import Home from './screens/home';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignContent: 'center',
     justifyContent: 'center'
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20
   }
 });
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>App</Text>
-    </View>
+    <ThemeProvider>
+      <RootNavigator>
+        <View style={styles.container}>
+          <Text>App</Text>
+          <Navigator>
+            <Screen name="Home" component={Home} />
+            <Screen name="About" component={About} />
+          </Navigator>
+        </View>
+      </RootNavigator>
+    </ThemeProvider>
   );
 }
