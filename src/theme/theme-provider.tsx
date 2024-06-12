@@ -5,13 +5,7 @@
  * @returns The rendered theme provider component.
  */
 
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState
-} from 'react';
+import {createContext, useContext, useEffect, useMemo, useState} from 'react';
 import {Appearance} from 'react-native';
 
 import {darkTheme, lightTheme} from '../styles/theme';

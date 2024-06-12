@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeProvider App snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#FFAF33",
+    }
+  }
+  testID="container"
+>
+  <Text>
+    Test Child
+  </Text>
+</View>
+`;
+
+exports[`ThemeProvider Child snapshot 1`] = `
+<Text>
+  Test Child
+</Text>
+`;

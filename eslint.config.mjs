@@ -61,6 +61,7 @@ export default [
     },
     ignores: [
       'node_modules/',
+      'example/node_modules/**/*',
       'android/',
       'ios/',
       'dist/',

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderRight Render snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "maxHeight": 40,
+        "minHeight": 40,
+        "paddingRight": 10,
+      },
+      {
+        "width": 375,
+      },
+    ]
+  }
+>
+  <Text>
+    Test Child
+  </Text>
+</View>
+`;
