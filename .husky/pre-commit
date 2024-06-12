@@ -1,1 +1,4 @@
-yarn lint && yarn typecheck && yarn format
+#!/bin/bash
+. "$(dirname "$0")/_/h"
+
+yarn prepare

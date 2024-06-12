@@ -1,6 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 
-import React, {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 import {useSetRecoilState} from 'recoil';
 import hookRoute from '../state-management/recoil/router';
 

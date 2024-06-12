@@ -1,4 +1,4 @@
 #!/bin/bash
 . "$(dirname "$0")/_/h"
 
-npx release-it --npm.tag=next --ci
+npx commilint --edit
