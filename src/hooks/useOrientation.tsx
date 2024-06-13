@@ -1,7 +1,7 @@
-import { useWindowDimensions } from 'react-native';
+import {useWindowDimensions} from 'react-native';
 
 const useOrientation = () => {
-  const { height, width } = useWindowDimensions();
+  const {height, width} = useWindowDimensions();
 
   return width > height ? 'landscape' : 'portrait';
 };

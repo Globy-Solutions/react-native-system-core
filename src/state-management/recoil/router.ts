@@ -10,14 +10,14 @@
  * @returns The current route from the router state.
  */
 
-import { atom, selector } from 'recoil';
+import {atom, selector} from 'recoil';
 
 import persistAtom from './persistAtom';
 
 export enum DeviceOrientation {
   portrait = 'portrait',
-  landscape = 'landscape',
-};
+  landscape = 'landscape'
+}
 export type Route = {
   key: string | undefined;
   name?: string;
@@ -28,7 +28,7 @@ const ROUTES_KEY = 'router';
 
 export const deviceOrientation = atom<keyof typeof DeviceOrientation>({
   default: 'portrait',
-  key: 'deviceOrientation',
+  key: 'deviceOrientation'
 });
 export const router = atom<Route>({
   default: {key: undefined, params: null},

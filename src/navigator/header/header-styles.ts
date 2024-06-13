@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { hp, wp } from '../../utils/_dimensions';
+import {StyleSheet} from 'react-native';
+import {hp, wp} from '../../utils/_dimensions';
 
 const minHeight: number = hp(5);
 const config = {
@@ -8,19 +8,18 @@ const config = {
   alignItems: 'center',
   minHeight,
   maxHeight: minHeight,
-  minWidth: wp(25),
-
+  minWidth: wp(25)
 } as const;
 const styles = StyleSheet.create({
   tapbarLeft: {
     ...config,
     marginRight: 'auto',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   },
   tapbarRight: {
     ...config,
     marginLeft: 'auto',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   }
 });
 

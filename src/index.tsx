@@ -31,6 +31,7 @@ export {
   default as ThemeProvider,
   useThemeProvider
 } from './theme/theme-provider';
+export {default as WebviewUI} from './webView';
 
 export {default as useOrientation} from './hooks/useOrientation';
 export {default as HeaderLeft} from './navigator/header/left';

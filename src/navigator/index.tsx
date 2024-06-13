@@ -1,9 +1,9 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import { StateProvider } from '../index';
+import {StateProvider} from '../index';
 import Container from './Container';
 
-import type { ThemeProps } from 'src/theme/types';
+import type {ThemeProps} from 'src/theme/types';
 
 type Props = {
   readonly children: React.ReactNode;
@@ -11,7 +11,8 @@ type Props = {
 };
 
 export default function RootNavigator({
-  children, theme
+  children,
+  theme
 }: Props): React.JSX.Element {
   return (
     <StateProvider>
