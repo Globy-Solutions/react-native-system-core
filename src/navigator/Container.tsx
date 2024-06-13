@@ -1,13 +1,14 @@
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
-import {useCallback, useEffect, useState} from 'react';
-import {useSetRecoilState} from 'recoil';
-import hookRoute from '../state-management/recoil/router';
+import { useCallback, useEffect, useState } from 'react';
+import { useSetRecoilState } from 'recoil';
+import useOrientation from '../hooks/useOrientation';
+import hookRoute, { DeviceOrientation, deviceOrientation } from '../state-management/recoil/router';
 
-import type {LinkingOptions} from '@react-navigation/native';
-import type {NavigationState} from '@react-navigation/routers';
-import type {ReactNode, SetStateAction} from 'react';
-import type {ThemeProps} from '../theme/types';
+import type { LinkingOptions } from '@react-navigation/native';
+import type { NavigationState } from '@react-navigation/routers';
+import type { ReactNode, SetStateAction } from 'react';
+import type { ThemeProps } from '../theme/types';
 
 interface Props {
   /* Set stacks to generate routes */
@@ -32,7 +33,7 @@ interface Routes {
   state: NavigationState;
 }
 interface Route {
-  routes: {state: {routes: Routes[]}}[];
+  routes: { state: { routes: Routes[] } }[];
 }
 interface NestedRoute {
   name: SetStateAction<string | null>;
@@ -46,10 +47,12 @@ function Container({
   onReady,
   CATALOGMode = true
 }: Props) {
+  const orientation = useOrientation();
+  const updateOrientation = useSetRecoilState<keyof typeof DeviceOrientation>(deviceOrientation);
   const updateCurrentRoute = useSetRecoilState(hookRoute);
   const [currentRouteName, setCurrentRouteName] = useState<string | null>(null);
   const handleNavigationStateChange = useCallback((state: Route) => {
-    state.routes.forEach((route: {state: {routes: unknown[]}}) => {
+    state.routes.forEach((route: { state: { routes: unknown[] } }) => {
       if (route.state) {
         route.state.routes.forEach(
           // @ts-ignore
@@ -62,6 +65,9 @@ function Container({
   }, []);
 
   useEffect(() => {
+    updateOrientation(orientation);
+  }, [orientation]);
+  useEffect(() => {
     let routeInfo = {
       key: currentRouteName ?? 'AppInBackground',
       name: currentRouteName ?? 'AppInBackground',
@@ -69,7 +75,6 @@ function Container({
     };
     CATALOGMode && console.log(routeInfo);
     updateCurrentRoute(routeInfo);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentRouteName]);
 
   return (

@@ -1,16 +1,18 @@
 import {
-  useNavigation,
   useThemeProvider
 } from '@globy-solutions/react-native-system-core';
-import {Button, Text, View} from 'react-native';
+import { Button, Text, View } from 'react-native';
+import screenStyles from './styles';
 
-const Home = () => {
-  const {navigate} = useNavigation();
+import type { FC } from 'react';
+import type { NavigatorProps } from 'src/navigator/types';
+
+const Home: FC<NavigatorProps> = ({ navigation: { navigate } }): JSX.Element => {
   const {
-    colors: {background}
+    colors: { background }
   } = useThemeProvider();
   return (
-    <View style={{backgroundColor: background}}>
+    <View style={[screenStyles, { backgroundColor: background }]}>
       <Text>Home</Text>
       <Button title="About" onPress={() => navigate('About')} />
     </View>

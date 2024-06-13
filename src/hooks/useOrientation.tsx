@@ -1,22 +1,9 @@
-import {useEffect, useState} from 'react';
-import {Dimensions} from 'react-native';
+import { useWindowDimensions } from 'react-native';
 
 const useOrientation = () => {
-  const [orientation, setOrientation] = useState('portrait');
+  const { height, width } = useWindowDimensions();
 
-  useEffect(() => {
-    const detectOrientation = () => {
-      const {width, height} = Dimensions.get('window');
-      setOrientation(width > height ? 'landscape' : 'portrait');
-    };
-
-    Dimensions.addEventListener('change', detectOrientation);
-
-    // @ts-ignore
-    return () => Dimensions.removeEventListener('change', detectOrientation);
-  }, []);
-
-  return orientation;
+  return width > height ? 'landscape' : 'portrait';
 };
 
 export default useOrientation;

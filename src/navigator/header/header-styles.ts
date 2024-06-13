@@ -1,17 +1,26 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { hp, wp } from '../../utils/_dimensions';
 
-const padding: number = 10;
-const minHeight: number = 40;
+const minHeight: number = hp(5);
 const config = {
   flexDirection: 'row',
-  justifyContent: 'space-between'
+  // justifyContent: 'space-between',
+  alignItems: 'center',
+  minHeight,
+  maxHeight: minHeight,
+  minWidth: wp(25),
+
 } as const;
 const styles = StyleSheet.create({
+  tapbarLeft: {
+    ...config,
+    marginRight: 'auto',
+    justifyContent: 'flex-start',
+  },
   tapbarRight: {
     ...config,
-    minHeight,
-    maxHeight: minHeight,
-    paddingRight: padding
+    marginLeft: 'auto',
+    justifyContent: 'flex-end',
   }
 });
 

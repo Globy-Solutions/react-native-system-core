@@ -1,5 +1,5 @@
-import {renderHook} from '@testing-library/react-hooks';
-import useNavigation from 'src/navigator/hooks/useNavigation';
+import { renderHook } from '@testing-library/react-hooks';
+import { useNavigation } from 'src/';
 
 // This hook should used in the navigator provider
 describe.skip('useNavigation', () => {
