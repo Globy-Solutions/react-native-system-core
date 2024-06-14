@@ -1,15 +1,10 @@
-import {forwardRef, useEffect} from 'react';
-import {
-  ActivityIndicator,
-  BackHandler,
-  Linking,
-  Platform,
-  StyleSheet
-} from 'react-native';
-import {WebView} from 'react-native-webview';
+import { Loader } from '@globy-solutions/react-native-system-components';
+import { forwardRef, useEffect } from 'react';
+import { BackHandler, Linking, Platform } from 'react-native';
+import { WebView } from 'react-native-webview';
+import { height, width } from '../utils/_dimensions';
 
-import type {WebViewMessageEvent, WebViewProps} from 'react-native-webview';
-import {height, width} from 'src/utils/_dimensions';
+import type { WebViewMessageEvent, WebViewProps } from 'react-native-webview';
 
 interface WebviewUIProps extends WebViewProps {
   uri: string;
@@ -24,26 +19,8 @@ type NavStateProps = {
   canGoForward?: boolean;
 };
 
-const styles = StyleSheet.create({
-  ActivityIndicatorStyle: {
-    flex: 1,
-    justifyContent: 'center'
-  }
-});
-
-// TODO: import from components
-const LoadingIndicatorView = () => {
-  return (
-    <ActivityIndicator
-      color="#009688"
-      size="large"
-      style={styles.ActivityIndicatorStyle}
-    />
-  );
-};
-
 const WebviewUI = forwardRef<WebView | null, WebviewUIProps>(
-  ({uri, onMessage, token, ...props}, ref) => {
+  ({ uri, onMessage, token, ...props }, ref) => {
     const webviewRef = ref;
     const onMessageFromWeb = (event: WebViewMessageEvent) => {
       onMessage ? onMessage(JSON.parse(event.nativeEvent.data)) : null;
@@ -51,7 +28,7 @@ const WebviewUI = forwardRef<WebView | null, WebviewUIProps>(
     const cookiesString = `appSession=${token};`;
     const setCookies = `document.cookie = "appSession=${token}; path=/";`;
     const handleWebViewNavigationStateChange = (newNavState: NavStateProps) => {
-      const {url} = newNavState;
+      const { url } = newNavState;
       if (!url) return;
       if (url.includes('google.com')) {
         console.log('Redirecting to', webviewRef);
@@ -80,10 +57,10 @@ const WebviewUI = forwardRef<WebView | null, WebviewUIProps>(
     }, []);
     return (
       <WebView
-        style={{flex: 1, width, height}}
-        source={{uri, headers: {Cookie: cookiesString}}}
+        style={{ flex: 1, width, height }}
+        source={{ uri, headers: { Cookie: cookiesString } }}
         onNavigationStateChange={handleWebViewNavigationStateChange}
-        renderLoading={LoadingIndicatorView}
+        renderLoading={() => <Loader />}
         startInLoadingState={true}
         ref={webviewRef}
         javaScriptEnabled={true}
@@ -94,7 +71,7 @@ const WebviewUI = forwardRef<WebView | null, WebviewUIProps>(
         allowsBackForwardNavigationGestures={true}
         // Set this to provide JavaScript that will be injected into the web page after the document element is created, but before other subresources finish loading.
         injectedJavaScriptBeforeContentLoaded={setCookies}
-        onShouldStartLoadWithRequest={({url}) => {
+        onShouldStartLoadWithRequest={({ url }) => {
           if (url.startsWith('https://')) {
             return true;
           }

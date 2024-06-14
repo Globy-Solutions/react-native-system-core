@@ -1,28 +1,28 @@
-import {useThemeProvider} from '@globy-solutions/react-native-system-core';
-import {Button, Modal, Text, View} from 'react-native';
+import { Button, Modal } from '@globy-solutions/react-native-system-components';
+import { useThemeProvider } from '@globy-solutions/react-native-system-core';
+import { useState } from 'react';
+import { Text, View } from 'react-native';
 import screenStyles from './styles';
 
-import type {FC} from 'react';
-import type {NavigatorProps} from 'src/navigator/types';
+import type { NavigatorProps } from 'src/navigator/types';
 
-const About: FC<NavigatorProps> = ({navigation: {navigate}}): JSX.Element => {
+const About = ({ navigation: { navigate } }: NavigatorProps): JSX.Element => {
   const {
-    colors: {primary},
-    fonts: {extraLarge}
+    colors: { background }, fonts: { extraLarge }
   } = useThemeProvider();
-  return (
-    <>
-      <View style={[screenStyles, {backgroundColor: primary}]}>
-        <Text style={extraLarge}>About</Text>
-        <Button title="Home" onPress={() => navigate('Home')} />
-        <Button
-          title="Modal"
-          onPress={() => console.log('Open Modal from components')}
-        />
-      </View>
-      <Modal />
-    </>
-  );
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const showModal = () => setModalVisible(!modalVisible);
+
+  return (<>
+    <View style={[screenStyles.centered, { backgroundColor: background }]}>
+      <Text style={[extraLarge, { marginVertical: 20 }]}>About</Text>
+      <Button style={{ marginVertical: 20 }} title="Home" onPress={() => navigate('Home')} />
+      <Button title="Show Modal" onPress={showModal} />
+    </View>
+    <Modal show={modalVisible} onClose={showModal} style={screenStyles.modal}>
+      <Text>Hello World!</Text>
+    </Modal>
+  </>);
 };
 
 export default About;

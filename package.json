@@ -26,6 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
+    "prepack": "bob build",
     "release": "release-it",
     "typecheck": "tsc --pretty --noEmit",
     "lint": "npx eslint --fix eslint.config.mjs",
@@ -127,6 +128,7 @@
     "react-native": "*"
   },
   "dependencies": {
+    "@globy-solutions/react-native-system-components": "^0.0.3",
     "@react-navigation/core": "^6.4.16",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
@@ -139,7 +141,6 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.2.2",
-    "@evilmartians/lefthook": "^1.5.0",
     "@react-native/eslint-config": "^0.73.1",
     "@react-native/typescript-config": "^0.74.84",
     "@release-it/conventional-changelog": "^5.0.0",

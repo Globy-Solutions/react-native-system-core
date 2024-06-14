@@ -6,8 +6,8 @@ import {
   Screen,
   ThemeProvider
 } from '@globy-solutions/react-native-system-core';
-import {TransitionPresets} from '@react-navigation/stack';
-import {Animated, Text} from 'react-native';
+import { TransitionPresets } from '@react-navigation/stack';
+import { Animated, Text } from 'react-native';
 import About from './screens/about';
 import Home from './screens/home';
 
@@ -57,7 +57,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <RootNavigator>
-        <Navigator
+        <Navigator initialRouteName="Home"
           screenOptions={() => ({
             gestureEnabled: true,
             headerMode: 'screen',

@@ -5,14 +5,18 @@ exports[`HeaderRight Render snapshot 1`] = `
   style={
     [
       {
+        "alignItems": "center",
         "flexDirection": "row",
-        "justifyContent": "space-between",
-        "maxHeight": 40,
-        "minHeight": 40,
-        "paddingRight": 10,
+        "justifyContent": "flex-end",
+        "marginLeft": "auto",
+        "maxHeight": 66.5,
+        "minHeight": 66.5,
+        "minWidth": 187.5,
       },
       {
-        "width": 375,
+        "backgroundColor": "#FFAF33",
+        "marginRight": -10,
+        "width": null,
       },
     ]
   }
