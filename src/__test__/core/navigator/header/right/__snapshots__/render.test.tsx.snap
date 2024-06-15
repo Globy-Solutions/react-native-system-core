@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderRight Render snapshot 1`] = `
+exports[`HeaderRight - Render snapshot 1`] = `
 <View
   style={
     [
@@ -20,6 +20,7 @@ exports[`HeaderRight Render snapshot 1`] = `
       },
     ]
   }
+  testID="headerRight"
 >
   <Text>
     Test Child

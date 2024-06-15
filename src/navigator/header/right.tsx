@@ -1,14 +1,14 @@
-import {Platform, View} from 'react-native';
-import {useRecoilValue} from 'recoil';
+import { Platform, View } from 'react-native';
+import { useRecoilValue } from 'recoil';
 
-import {deviceOrientation} from '../../state-management/recoil/router';
-import {useThemeProvider} from '../../theme/theme-provider';
-import {wp} from '../../utils/_dimensions';
-import styles from './header-styles';
+import { deviceOrientation } from '../../state-management/recoil/router';
+import { useThemeProvider } from '../../theme/theme-provider';
+import { wp } from '../../utils/_dimensions';
+import styles from './styles';
 
-import type {FC} from 'react';
-import type {DeviceOrientation} from '../../state-management/recoil/router';
-import type {HeaderProps} from './types';
+import type { FC } from 'react';
+import type { DeviceOrientation } from '../../state-management/recoil/router';
+import type { HeaderProps } from './types';
 
 const HeaderRight: FC<HeaderProps> = ({children}: HeaderProps): JSX.Element => {
   const {
@@ -18,7 +18,7 @@ const HeaderRight: FC<HeaderProps> = ({children}: HeaderProps): JSX.Element => {
     useRecoilValue<keyof typeof DeviceOrientation>(deviceOrientation);
 
   return (
-    <View
+    <View testID='headerRight'
       style={[
         styles.tapbarRight,
         {
