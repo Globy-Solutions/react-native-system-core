@@ -7,10 +7,10 @@ on:
       branches: [development]
 jobs:
   eslint:
-    uses: Globy-Solutions/workflows-actions/master/eslint.yml@main
+    uses: /Globy-Solutions/workflows-actions/master/eslint.yml@main
 
   prettier:
-    uses: Globy-Solutions/workflows-actions/master/prettier.yml@main
+    uses: /Globy-Solutions/workflows-actions/master/prettier.yml@main
 
   jest:
-    uses: Globy-Solutions/workflows-actions/master/jest.yml@main
+    uses: /Globy-Solutions/workflows-actions/master/jest.yml@main
