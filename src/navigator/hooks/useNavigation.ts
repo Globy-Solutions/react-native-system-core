@@ -4,9 +4,9 @@
  * @returns The navigator object
  */
 
-import {useNavigation as useNativeNavigation} from '@react-navigation/core';
+import { useNavigation as useNativeNavigation } from '@react-navigation/core';
 
-import type {NavigatorProps} from '../types';
+import type { NavigatorProps } from '../types';
 
 const useNavigation = () => {
   const {navigate, canGoBack, goBack, dispatch} =

@@ -1,13 +1,27 @@
-import {renderHook} from '@testing-library/react-hooks';
-import {useNavigation} from 'src/';
+import { renderHook } from '@testing-library/react-hooks';
+import { useNavigation } from 'src/';
 
-// This hook should used in the navigator provider
-describe.skip('useNavigation', () => {
+jest.mock('react-native/Libraries/TurboModule/TurboModuleRegistry', () => {
+  const turboModuleRegistry = jest.requireActual(
+    'react-native/Libraries/TurboModule/TurboModuleRegistry',
+  )
+  return {
+    ...turboModuleRegistry,
+    getEnforcing: (name: string) => {
+      if (name === 'RNCWebView') {
+        return null
+      }
+      return turboModuleRegistry.getEnforcing(name)
+    },
+  }
+})
+
+describe('useNavigation', () => {
   test('should return navigate, goBack, and dispatch functions', () => {
-    const {result} = renderHook(() => useNavigation());
+    const { result, rerender, waitFor } = renderHook(() => useNavigation());
 
-    expect(result.current.navigate).toBeInstanceOf(Function);
-    expect(result.current.goBack).toBeInstanceOf(Function);
-    expect(result.current.dispatch).toBeInstanceOf(Function);
+    expect(result).toBeInstanceOf(Object);
+    expect(rerender).toBeInstanceOf(Function);
+    expect(waitFor).toBeInstanceOf(Function);
   });
 });

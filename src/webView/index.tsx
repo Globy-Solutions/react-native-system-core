@@ -1,6 +1,5 @@
-import { Loader } from '@globy-solutions/react-native-system-components';
 import { forwardRef, useEffect } from 'react';
-import { BackHandler, Linking, Platform } from 'react-native';
+import { BackHandler, Linking, Platform, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { height, width } from '../utils/_dimensions';
 
@@ -22,9 +21,7 @@ type NavStateProps = {
 const WebviewUI = forwardRef<WebView | null, WebviewUIProps>(
   ({ uri, onMessage, token, ...props }, ref) => {
     const webviewRef = ref;
-    const onMessageFromWeb = (event: WebViewMessageEvent) => {
-      onMessage ? onMessage(JSON.parse(event.nativeEvent.data)) : null;
-    };
+    const onMessageFromWeb = (event: WebViewMessageEvent) => onMessage && onMessage(JSON.parse(event.nativeEvent.data));
     const cookiesString = `appSession=${token};`;
     const setCookies = `document.cookie = "appSession=${token}; path=/";`;
     const handleWebViewNavigationStateChange = (newNavState: NavStateProps) => {
@@ -60,7 +57,7 @@ const WebviewUI = forwardRef<WebView | null, WebviewUIProps>(
         style={{ flex: 1, width, height }}
         source={{ uri, headers: { Cookie: cookiesString } }}
         onNavigationStateChange={handleWebViewNavigationStateChange}
-        renderLoading={() => <Loader />}
+        renderLoading={() => <View><Text>Loading...</Text></View>}
         startInLoadingState={true}
         ref={webviewRef}
         javaScriptEnabled={true}

@@ -1,5 +1,5 @@
-import {Appearance, Platform} from 'react-native';
-import {darkTheme, defaults, lightTheme} from 'src/styles/theme';
+import { Appearance, Platform } from 'react-native';
+import { darkTheme, defaults, fontFamily, fonts, lightTheme, scale } from 'src/styles/theme';
 
 describe('fontFamily', () => {
   test('should return colors according to theme', () => {
@@ -17,20 +17,23 @@ describe('fontFamily', () => {
     }
   });
   test('should return the font family according to the OS', () => {
-    const {
-      fonts: {
-        extraLarge: {fontFamily}
-      }
-    } = defaults;
     switch (Platform.OS) {
       case 'ios':
         expect(fontFamily).toBe('Arial Hebrew');
+        expect(defaults.fonts.extraLarge.fontFamily).toBe(fontFamily);
         break;
       case 'android':
         expect(fontFamily).toBe('Mooli Regular');
+        expect(defaults.fonts.extraLarge.fontFamily).toBe(fontFamily);
         break;
       default:
         expect(fontFamily).toBeUndefined();
     }
+  });
+  test('should return defaults values, scale & fonts', () => {
+    expect(defaults.fonts).toStrictEqual(fonts);
+    expect(defaults.elevation).toBe(5);
+    expect(defaults.borderRadius).toBe(15);
+    expect(scale).toBe(Platform.OS === 'ios' ? 1 : 0.8);
   });
 });

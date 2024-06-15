@@ -1,11 +1,11 @@
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
-import {getFontLineHeight, moderateScale} from '../utils/_dimensions';
+import { getFontLineHeight, moderateScale } from '../utils/_dimensions';
 
-import type {ThemeProps} from '../theme/types';
+import type { ThemeProps } from '../theme/types';
 
-const scale: number = Platform.OS === 'ios' ? 1 : 0.8;
-const fontFamily: string =
+export const scale: number = Platform.OS === 'ios' ? 1 : 0.8;
+export const fontFamily: string =
     Platform.OS === 'ios' ? 'Arial Hebrew' : 'Mooli Regular',
   fonts = {
     extraLarge: {

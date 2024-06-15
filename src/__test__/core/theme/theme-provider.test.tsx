@@ -1,12 +1,11 @@
 import '@testing-library/jest-native/extend-expect';
 import React from 'react';
-import {Appearance, Platform, Text, View} from 'react-native';
+import { Appearance, Platform, Text, View } from 'react-native';
+import { Provider, render, screen } from 'src/__test__/utils/customRender';
+import { darkTheme, defaults, lightTheme } from 'src/styles/theme';
+import { useThemeProvider } from 'src/theme/theme-provider';
 
-import {Provider, render, screen} from 'src/__test__/utils/customRender';
-import {darkTheme, defaults, lightTheme} from 'src/styles/theme';
-import {useThemeProvider} from 'src/theme/theme-provider';
-
-import type {ReactTestInstance} from 'react-test-renderer';
+import type { ReactTestInstance } from 'react-test-renderer';
 
 const existOnScreen = (element: any) => {
   expect(element).toBeVisible();
@@ -14,17 +13,17 @@ const existOnScreen = (element: any) => {
   return element;
 };
 const Child = () => <Text>Test Child</Text>;
-const Container = ({children}: {children: React.ReactNode}) => {
+const Container = ({ children }: { children: React.ReactNode }) => {
   const {
-    colors: {background}
+    colors: { background }
   } = useThemeProvider();
   return (
-    <View style={{backgroundColor: background}} testID="container">
+    <View style={{ backgroundColor: background }} testID="container">
       {children}
     </View>
   );
 };
-const App = ({children}: {children?: React.ReactNode}) => (
+const AppWithProvider = ({ children }: { children?: React.ReactNode }) => (
   <Provider>{children}</Provider>
 );
 
@@ -47,7 +46,7 @@ describe('fontFamily', () => {
   test('should return the font family according to the OS', () => {
     const {
       fonts: {
-        extraLarge: {fontFamily}
+        extraLarge: { fontFamily }
       }
     } = defaults;
     switch (Platform.OS) {
@@ -82,11 +81,11 @@ describe('ThemeProvider', () => {
     let container: ReactTestInstance;
     beforeEach(() => {
       render(
-        <App>
+        <AppWithProvider>
           <Container>
             <Child />
           </Container>
-        </App>
+        </AppWithProvider>
       );
       child = screen.getByText('Test Child');
       container = screen.getByTestId('container');
@@ -103,10 +102,10 @@ describe('ThemeProvider', () => {
     test('render styles', () => {
       const isDark = Appearance.getColorScheme() === 'dark';
       if (isDark) {
-        expect(container).toHaveStyle({backgroundColor: '#09265D'});
+        expect(container).toHaveStyle({ backgroundColor: '#09265D' });
         return;
       }
-      expect(container).toHaveStyle({backgroundColor: '#FFAF33'});
+      expect(container).toHaveStyle({ backgroundColor: '#FFAF33' });
     });
   });
 });

@@ -23,20 +23,20 @@ export function multiply(a: number, b: number): Promise<number> {
 }
  */
 
-export {Navigator, default as RootNavigator, Screen} from './navigator';
-export {default as useNavigation} from './navigator/hooks/useNavigation';
-export {StateProvider} from './state-management';
-export {darkTheme, defaults, lightTheme} from './styles/theme';
+export { Navigator, default as RootNavigator, Screen } from './navigator';
+export { default as useNavigation } from './navigator/hooks/useNavigation';
+export { StateProvider } from './state-management';
+export { darkTheme, defaults, lightTheme } from './styles/theme';
 export {
   default as ThemeProvider,
   useThemeProvider
 } from './theme/theme-provider';
-export {default as WebviewUI} from './webView';
+export { default as WebviewUI } from './webView';
 
-export {default as useOrientation} from './hooks/useOrientation';
-export {default as HeaderLeft} from './navigator/header/left';
-export {default as HeaderRight} from './navigator/header/right';
-export {default as capitalizeFirstLetter} from './utils/_capitalizeFirstLetter';
+export { default as useOrientation } from './hooks/useOrientation';
+export { default as HeaderLeft } from './navigator/header/left';
+export { default as HeaderRight } from './navigator/header/right';
+export { default as capitalizeFirstLetter } from './utils/_capitalizeFirstLetter';
 export {
   getFontLineHeight,
   height,
@@ -47,3 +47,4 @@ export {
   width,
   wp
 } from './utils/_dimensions';
+
