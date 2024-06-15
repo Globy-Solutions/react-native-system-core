@@ -5,12 +5,12 @@
  * @returns The rendered theme provider component.
  */
 
-import {createContext, useContext, useEffect, useMemo, useState} from 'react';
-import {Appearance} from 'react-native';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { Appearance } from 'react-native';
 
-import {darkTheme, lightTheme} from '../styles/theme';
+import { darkTheme, lightTheme } from '../styles/theme';
 
-import type {ThemeDataProps, ThemeProps, ThemeProviderProps} from './types';
+import type { ThemeDataProps, ThemeProps, ThemeProviderProps } from './types';
 
 const ThemeProviderContext = createContext<ThemeDataProps | undefined>(
   undefined
