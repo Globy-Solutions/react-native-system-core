@@ -7,7 +7,7 @@ on:
       branches: [development]
 jobs:
   eslint:
-    uses: https://github.com/Globy-Solutions/workflows-actions/blob/abd39cdd6453b66dd563e707ea21b585ec1ac198/eslint.yml
+    uses: Globy-Solutions/workflows-actions/eslint.yml@master
 
   prettier:
     uses: Globy-Solutions/workflows-actions/prettier.yml@master
