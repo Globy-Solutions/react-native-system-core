@@ -48,3 +48,4 @@ export {
   wp
 } from './utils/_dimensions';
 
+export { default as AuthScreen } from './auth';

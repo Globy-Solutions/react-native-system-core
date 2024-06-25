@@ -6,7 +6,6 @@ import { useThemeProvider } from '../../theme/theme-provider';
 import { wp } from '../../utils/_dimensions';
 import styles from './styles';
 
-import type { FC } from 'react';
 import type { DeviceOrientation } from '../../state-management/recoil/router';
 import type { HeaderProps } from './types';
 

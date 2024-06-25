@@ -22,7 +22,7 @@ const config = {
     restSpeedThreshold: 0.01
   }
 };
-const forFade = ({current, next}: any) => {
+const forFade = ({ current, next }: any) => {
   const opacity = Animated.add(
     current.progress,
     next ? next.progress : 0
@@ -32,10 +32,10 @@ const forFade = ({current, next}: any) => {
   });
 
   return {
-    leftButtonStyle: {opacity},
-    rightButtonStyle: {opacity},
-    titleStyle: {opacity},
-    backgroundStyle: {opacity}
+    leftButtonStyle: { opacity },
+    rightButtonStyle: { opacity },
+    titleStyle: { opacity },
+    backgroundStyle: { opacity }
   };
 };
 const options = {
@@ -52,20 +52,20 @@ const options = {
   ),
   headerLeft: () => <HeaderLeft />
 };
+const screenOptions = () => ({
+  gestureEnabled: true,
+  headerMode: 'screen',
+  headerTintColor: 'white',
+  headerStyle: { backgroundColor: 'tomato' },
+  headerTitleStyle: { fontWeight: 'bold' },
+  ...TransitionPresets.ModalPresentationIOS
+});
 
 export default function App() {
   return (
     <ThemeProvider>
       <RootNavigator>
-        <Navigator initialRouteName="Home"
-          screenOptions={() => ({
-            gestureEnabled: true,
-            headerMode: 'screen',
-            headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'tomato'},
-            headerTitleStyle: {fontWeight: 'bold'},
-            ...TransitionPresets.ModalPresentationIOS
-          })}>
+        <Navigator initialRouteName="Home" screenOptions={screenOptions}>
           <Screen name="Home" component={Home} options={options} />
           <Screen name="About" component={About} options={options} />
         </Navigator>

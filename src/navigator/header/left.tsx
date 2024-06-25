@@ -7,7 +7,6 @@ import { wp } from '../../utils/_dimensions';
 import useNavigation from '../hooks/useNavigation';
 import styles from './styles';
 
-import type { FC } from 'react';
 import type { DeviceOrientation } from '../../state-management/recoil/router';
 import type { HeaderProps } from './types';
 
