@@ -10,7 +10,7 @@
     "build:ios": "cd ios && xcodebuild -workspace ReactNativeSystemCoreExample.xcworkspace -scheme ReactNativeSystemCoreExample -configuration Debug -sdk iphonesimulator CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO"
   },
   "dependencies": {
-    "@globy-solutions/react-native-system-components": "^0.0.3",
+    "@globy-solutions/react-native-system-components": "^0.0.4",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "@react-navigation/routers": "^6.1.9",
