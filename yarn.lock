@@ -1475,7 +1475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.18.2, @babel/preset-env@npm:^7.20.0":
+"@babel/preset-env@npm:^7.18.2":
   version: 7.24.7
   resolution: "@babel/preset-env@npm:7.24.7"
   dependencies:
@@ -1645,7 +1645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.8.4":
   version: 7.24.7
   resolution: "@babel/runtime@npm:7.24.7"
   dependencies:
@@ -1971,9 +1971,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@globy-solutions/react-native-system-components@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@globy-solutions/react-native-system-components@npm:0.0.3"
+"@globy-solutions/react-native-system-components@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@globy-solutions/react-native-system-components@npm:0.0.4"
   dependencies:
     commitlint: ^19.3.0
     react: ^18.3.1
@@ -1983,43 +1983,16 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 37d71322bb1e454b1577d542fcad53f7320fb075979c7aa5c7ce846f2df54035f23400075cee2a0a98d10e580ffb9a957eb1bcd3c01deb6e7feb68b96fd2f153
+  checksum: 97d163943589a0e7b0552f6766a291f60b13a2bdc0f06e9fe5c9406cff44278473578e6f6e4bb2ffc9c20b477f436114dd485d6d24515227782ef8c5cbea4f6e
   languageName: node
   linkType: hard
-
-"@globy-solutions/react-native-system-core-example@workspace:example":
-  version: 0.0.0-use.local
-  resolution: "@globy-solutions/react-native-system-core-example@workspace:example"
-  dependencies:
-    "@babel/core": ^7.20.0
-    "@babel/preset-env": ^7.20.0
-    "@babel/runtime": ^7.20.0
-    "@globy-solutions/react-native-system-components": ^0.0.3
-    "@react-native/babel-preset": 0.74.84
-    "@react-native/metro-config": 0.74.84
-    "@react-native/typescript-config": 0.74.84
-    "@react-navigation/native": ^6.1.17
-    "@react-navigation/native-stack": ^6.9.26
-    "@react-navigation/routers": ^6.1.9
-    "@react-navigation/stack": ^6.3.29
-    babel-plugin-module-resolver: ^5.0.0
-    react: 18.2.0
-    react-native: 0.74.2
-    react-native-gesture-handler: ^2.16.2
-    react-native-mmkv: ^2.12.2
-    react-native-reanimated: ^3.12.0
-    react-native-safe-area-context: ^4.10.4
-    react-native-screens: ^3.31.1
-    react-native-vector-icons: ^10.1.0
-  languageName: unknown
-  linkType: soft
 
 "@globy-solutions/react-native-system-core@workspace:.":
   version: 0.0.0-use.local
   resolution: "@globy-solutions/react-native-system-core@workspace:."
   dependencies:
     "@commitlint/config-conventional": ^19.2.2
-    "@globy-solutions/react-native-system-components": ^0.0.3
+    "@globy-solutions/react-native-system-components": ^0.0.4
     "@react-native/eslint-config": ^0.73.1
     "@react-native/typescript-config": ^0.74.84
     "@react-navigation/core": ^6.4.16
@@ -3087,18 +3060,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native/metro-config@npm:0.74.84":
-  version: 0.74.84
-  resolution: "@react-native/metro-config@npm:0.74.84"
-  dependencies:
-    "@react-native/js-polyfills": 0.74.84
-    "@react-native/metro-babel-transformer": 0.74.84
-    metro-config: ^0.80.3
-    metro-runtime: ^0.80.3
-  checksum: fcad7e0e4a304fb90e7d74bd008e245d5f45fa59fbb94aabb3feb87aec96372d5881fdb082c79bd4e3aaca583025de7207c8ffc3e0c1e9c415034c357e8e21f7
-  languageName: node
-  linkType: hard
-
 "@react-native/normalize-colors@npm:0.74.84":
   version: 0.74.84
   resolution: "@react-native/normalize-colors@npm:0.74.84"
@@ -3106,7 +3067,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native/typescript-config@npm:0.74.84, @react-native/typescript-config@npm:^0.74.84":
+"@react-native/typescript-config@npm:^0.74.84":
   version: 0.74.84
   resolution: "@react-native/typescript-config@npm:0.74.84"
   checksum: 5f96dceaba5242b461aa7a401d16826eb6552f8fc510ea1f855e4f99e4fdfcc168554d0a1150e39a8afb14e4d533a1b49b29c5ac3796ecf75ac6e78574b16344
@@ -4248,7 +4209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-module-resolver@npm:^5.0.0, babel-plugin-module-resolver@npm:^5.0.2":
+"babel-plugin-module-resolver@npm:^5.0.2":
   version: 5.0.2
   resolution: "babel-plugin-module-resolver@npm:5.0.2"
   dependencies:
@@ -6981,7 +6942,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>":
   version: 2.3.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=18f3a7"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -12218,7 +12179,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.8#~builtin<compat/resolve>":
   version: 1.22.8
-  resolution: "resolve@patch:resolve@npm%3A1.22.8#~builtin<compat/resolve>::version=1.22.8&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.8#~builtin<compat/resolve>::version=1.22.8&hash=07638b"
   dependencies:
     is-core-module: ^2.13.0
     path-parse: ^1.0.7
@@ -12231,7 +12192,7 @@ __metadata:
 
 "resolve@patch:resolve@^2.0.0-next.5#~builtin<compat/resolve>":
   version: 2.0.0-next.5
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.5#~builtin<compat/resolve>::version=2.0.0-next.5&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.5#~builtin<compat/resolve>::version=2.0.0-next.5&hash=07638b"
   dependencies:
     is-core-module: ^2.13.0
     path-parse: ^1.0.7
@@ -13693,7 +13654,7 @@ __metadata:
 
 "typescript@patch:typescript@^5.4.5#~builtin<compat/typescript>":
   version: 5.4.5
-  resolution: "typescript@patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=14eedb"
+  resolution: "typescript@patch:typescript@npm%3A5.4.5#~builtin<compat/typescript>::version=5.4.5&hash=701156"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
