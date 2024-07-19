@@ -128,7 +128,7 @@
     "react-native": "*"
   },
   "dependencies": {
-    "@globy-solutions/react-native-system-components": "^0.0.3",
+    "@globy-solutions/react-native-system-components": "^0.0.4",
     "@react-navigation/core": "^6.4.16",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
